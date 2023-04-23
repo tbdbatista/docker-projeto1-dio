@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  apache:
+    image: httpd:latest
+    container_name: apache1
+    networks:
+    - my-network
+    ports:
+    - '80:80'
+    volumes:
+    - ./projeto:/usr/local/apache2/htdocs
+networks:
+  my-network:
+    driver: bridge
+  
